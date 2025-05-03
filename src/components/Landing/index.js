@@ -50,7 +50,6 @@ export default function Index() {
                     <h1>mrkjhm</h1>
                     <div className={styles.position}>
                         <i className={`ri-arrow-right-down-long-line ${styles.icon}`}></i>
-
                         <p>Multimedia Designer</p>
                         <p>Web Developer</p>
                     </div>
