@@ -30,7 +30,7 @@ export default function Index() {
         // Sync route details immediately when pathname changes
         const activeRoute = routes.find(route => route.path === pathname);
         setRouteDetail(activeRoute ? activeRoute.label : null);
-    }, [pathname]);
+    }, [pathname, isActive]);
 
     useEffect(() => {
         if (isActive) setIsActive(false);

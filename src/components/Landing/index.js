@@ -9,8 +9,8 @@ export default function Index() {
     const secondText = useRef(null);
     const slider = useRef(null);
 
-    let xPercent = 0;
-    let direction = -1;
+    const xPercent = useRef(0);
+    const direction = useRef(-1);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -22,24 +22,24 @@ export default function Index() {
                 start: 0,
                 end: window.innerHeight,
                 scrub: true,
-                onUpdate: (e) => direction = e.direction * -1
+                onUpdate: (e) => direction.current = e.direction * -1
             },
             x: "-=100px"
         });
     }, []);
 
     const animation = () => {
-        if (xPercent <= -100) {
-            xPercent = 0;
+        if (xPercent.current <= -100) {
+            xPercent.current = 0;
         }
 
-        if (xPercent > 0) {
-            xPercent = -100;
+        if (xPercent.current > 0) {
+            xPercent.current = -100;
         }
 
-        gsap.set(firstText.current, { xPercent: xPercent });
-        gsap.set(secondText.current, { xPercent: xPercent });
-        xPercent += 0.1 * direction;
+        gsap.set(firstText.current, { xPercent: xPercent.current });
+        gsap.set(secondText.current, { xPercent: xPercent.current });
+        xPercent.current += 0.1 * direction;
         requestAnimationFrame(animation);
     }
 
