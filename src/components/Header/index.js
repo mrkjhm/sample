@@ -101,13 +101,13 @@ export default function Index() {
                 <Magnetic>
                     <div className={styles.logo}>
                         <p className={styles.copyright}>©</p>
-                        <a href="/">
+                        <Link href="/">
                             <div className={styles.name}>
                                 <p className={styles.codeBy}>Code by</p>
                                 <p className={styles.mrkjhm}>Mrkjhm</p>
                                 <p className={styles.amerns}>Amerna</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </Magnetic>
                 <div className={styles.nav}>
