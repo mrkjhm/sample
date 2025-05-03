@@ -29,12 +29,12 @@ export default function Index() {
     }, []);
 
     const animation = () => {
-        if (xPercent.current <= -100) {
+        if (xPercent.current <= -103) {
             xPercent.current = 0;
         }
 
         if (xPercent.current > 0) {
-            xPercent.current = -100;
+            xPercent.current = -103;
         }
 
         gsap.set(firstText.current, { xPercent: xPercent.current });
@@ -56,8 +56,8 @@ export default function Index() {
                 </div>
                 <div ref={slider} className={styles.sliderContainer}>
                     <div className={styles.slider}>
-                        <p ref={firstText} className={styles.text}>Mark Jhem Amerna - </p>
-                        <p ref={secondText}>Mark Jhem Amerna -</p>
+                        <p ref={firstText} className={styles.text}>Mark Jhem Amerna — </p>
+                        <p ref={secondText}>Mark Jhem Amerna —</p>
                     </div>
                 </div>
             </div>
