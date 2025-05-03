@@ -1,0 +1,152 @@
+.menu{
+  height: 100vh;
+  background-color: rgb(41, 41, 41);
+  position: fixed;
+  right: 0;
+  top: 0;
+  color: white;
+  z-index: 3;
+  .body{
+    box-sizing: border-box;
+    height: 100%;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .nav{
+      display: flex;
+      flex-direction: column;
+      font-size: 56px;
+      gap: 12px;
+      margin-top: 80px;
+
+      .header{
+        color: rgb(153, 153, 153);
+        border-bottom: 1px solid rgb(153, 153, 153);
+        text-transform: uppercase;
+        font-size: 11px;
+        margin-bottom: 40px;
+      }
+
+      a{
+        text-decoration: none;
+        color: white;
+        font-weight: 300;
+      }
+
+    }
+  }
+}
+
+/* Full-screen background animation */
+.slide1 {
+  position: fixed;  /* Fix the background in the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;       /* Full width */
+  height: 100vh;     /* Full screen height */
+  background-color: #1C1D20; /* Background color */
+  z-index: 10;       /* Make sure it's above other content */
+  pointer-events: all; /* Block interactions behind the overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text to be displayed during the animation */
+.text1 {
+display: flex;
+  align-items: center;
+  color: white;
+  gap: 20px;
+  font-size: 46px;
+  z-index: 2;  /* Ensure text appears above the background */
+}
+
+/* Style for the route name */
+.route1 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Optional dot next to the route name */
+.dot1 {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  padding-top: 10px;
+}
+
+/* Navigation menu styles (your existing styles should work with the below additions) */
+.nav {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.el {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+
+}
+
+.indicator {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  left: -30px;
+
+}
+
+.el:hover .indicator {
+  background-color: white; /* Highlight the indicator on hover */
+}
+
+/* Add transition to burger menu (optional, based on your original burger button) */
+.burger {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.burgerActive {
+  transform: rotate(45deg);
+}
+
+.burgerActive::before {
+  top: 0;
+  transform: rotate(-90deg);
+}
+
+.burgerActive::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.burger::before {
+  top: -8px;
+}
+
+.burger::after {
+  top: 8px;
+}
+

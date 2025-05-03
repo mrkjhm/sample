@@ -1,0 +1,191 @@
+.header{
+  font-size: 1.2em;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  top: 0;
+  color: white;
+  padding: 35px;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 300;
+  box-sizing: border-box;
+  align-items: center;
+
+  .logo{
+    display: flex;
+    cursor: pointer;
+    p{
+      margin: 0px;
+      transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    .name{
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-left: 5px;
+      transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+      p{
+        position: relative;
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+        &:nth-of-type(2){
+          padding-left: 0.3em;
+        }
+        &:nth-of-type(3){
+          position: absolute;
+          left: 120px;
+          padding-left: 1.2em;
+        }
+      }
+    }
+    &:hover{
+      .copyright{
+        transform: rotate(360deg);
+      }
+      .name{
+        padding-right: 30px;
+        .codeBy{
+          transform: translateX(-130%);
+        }
+        .mrkjhm{
+          transform: translateX(-70px);
+        }
+        .amerns{
+          transform: translateX(-65px);
+        }
+      }
+    }
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    .el {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+      padding: 5px;
+      cursor: pointer;
+      &:hover {
+        .indicator {
+          transform: scale(1);
+        }
+      }
+
+      .indicator {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        top: 45px;
+        left: 40%;
+        background-color: white;
+        border-radius: 50%;
+        transform: scale(0) translateX(-50%);
+        transition: transform 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+
+        &.active {
+          transform: scale(1)   /* When active, make it visible */
+        }
+      }
+    }
+
+    a {
+      cursor: pointer;
+    }
+  }
+
+}
+.headerButtonContainer{
+  transform: scale(0);
+  position: fixed;
+  right: 0px;
+  z-index: 4;
+
+  .button{
+    position: relative;
+    margin: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #1C1D20;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .burger{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    &::after, &::before{
+      content: "";
+      display: block;
+      height: 1px;
+      width: 40%;
+      margin: auto;
+      background-color: white;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    &::after{
+      top: -5px;
+    }
+
+    &::before{
+      top: 5px;
+    }
+  }
+
+  .burgerActive{
+
+    &::after{
+      transform: rotate(45deg);
+      top: -1px;
+    }
+
+    &::before{
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+
+  }
+}
+.slide {
+  position: fixed;  /* Keep it fixed in the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;  /* Full screen height */
+  background-color: #1C1D20;
+  z-index: 10;  /* Ensure it stays above the other content */
+  pointer-events: all;  /* Block interactions behind the overlay */
+}
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+  .dot{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  .route {
+    /*position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);  */
+    color: white;
+    font-size: 46px;
+    z-index: 3;
+    transition: opacity 0.5s ease-in-out;  /* Smooth fade-in */
+  }
+}
+
