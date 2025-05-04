@@ -31,7 +31,7 @@ const navItems = [
 const routes = {
     '/': 'Home',
     '/work': 'Work',
-    '/about': 'About',
+    '/about': 'Description',
     '/contact': 'Contact',
 }
 

@@ -41,10 +41,15 @@ export default function Index() {
         gsap.to(button.current, {
             scrollTrigger: {
                 trigger: document.documentElement,
-                start: 0,
-                end: window.innerHeight,
+                // 1st top: trigger element
+                // 2nd top: start position or viewport top
+                start: "top top",
+                // 1st percent: trigger element
+                // 2nd percent: end position or viewport height
+                end: "40% 30%",
                 onLeave: () => { gsap.to(button.current, { scale: 1, duration: 0.25, ease: "power1.out" }) },
-                onEnterBack: () => { gsap.to(button.current, { scale: 0, duration: 0.25, ease: "power1.out" }, setIsActive(false)) }
+                onEnterBack: () => { gsap.to(button.current, { scale: 0, duration: 0.25, ease: "power1.out" }, setIsActive(false)) },
+                markers: true,
             }
         });
     }, []);

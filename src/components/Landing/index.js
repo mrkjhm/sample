@@ -39,7 +39,7 @@ export default function Index() {
 
         gsap.set(firstText.current, { xPercent: xPercent.current });
         gsap.set(secondText.current, { xPercent: xPercent.current });
-        xPercent.current += 0.1 * direction.current;
+        xPercent.current += 0.05 * direction.current;
         requestAnimationFrame(animation);
     }
 
@@ -52,6 +52,7 @@ export default function Index() {
                         <i className={`ri-arrow-right-down-long-line ${styles.icon}`}></i>
                         <p>Multimedia Designer</p>
                         <p>Web Developer</p>
+                        <button>Download Cv</button>
                     </div>
                 </div>
                 <div ref={slider} className={styles.sliderContainer}>

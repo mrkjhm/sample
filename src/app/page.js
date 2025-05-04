@@ -5,7 +5,7 @@ import Lenis from "lenis";
 import {AnimatePresence} from "framer-motion";
 import Preloader from "@/components/Preloader";
 import Landing from "@/components/Landing";
-import About from   "@/components/About/About"
+import Description from "@/components/Description"
 import styles from './style.module.scss'
 
 
@@ -49,7 +49,7 @@ export default function Home() {
             {isLoading && <Preloader />}
         </AnimatePresence>
         <Landing />
-        <About />
+        <Description />
     </main>
   );
 }
