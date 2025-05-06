@@ -41,34 +41,26 @@ export default function Index() {
         gsap.to(button.current, {
             scrollTrigger: {
                 trigger: document.documentElement,
-                // 1st top: trigger element
-                // 2nd top: start position or viewport top
                 start: "top top",
-                // 1st percent: trigger element
-                // 2nd percent: end position or viewport height
-                end: "40% 30%",
+                end: "30% 60%",
                 onLeave: () => { gsap.to(button.current, { scale: 1, duration: 0.25, ease: "power1.out" }) },
                 onEnterBack: () => { gsap.to(button.current, { scale: 0, duration: 0.25, ease: "power1.out" }, setIsActive(false)) },
-                markers: true,
             }
         });
     }, []);
 
     const handleNavLinkClick = (event, targetUrl) => {
-        event.preventDefault(); // Prevent immediate navigation
+        event.preventDefault();
 
-        // Sync the routeDetail immediately to the target route
         const targetRoute = routes.find(route => route.path === targetUrl);
         setRouteDetail(targetRoute ? targetRoute.label : null);
 
-        // Start the background animation for entering
         setBackgroundAnimation(true);
 
-        // After animation finishes (1 second), navigate to the new page
         setTimeout(() => {
-            setBackgroundAnimation(false);  // Reset the background animation
-            router.push(targetUrl); // Navigate to the new page after animation completes
-        }, 1000);  // Duration should match the background animation time
+            setBackgroundAnimation(false);
+            router.push(targetUrl);
+        }, 1000);
     };
 
     const text = {

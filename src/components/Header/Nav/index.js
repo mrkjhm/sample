@@ -31,7 +31,7 @@ const navItems = [
 const routes = {
     '/': 'Home',
     '/work': 'Work',
-    '/about': 'Description',
+    '/about': 'About',
     '/contact': 'Contact',
 }
 
@@ -159,14 +159,14 @@ export default function Index() {
                         exit={{ y: "-100%" }}
                         transition={{ duration: 0.5, delay: 0.3, ease: [0.33, 1, 0.68, 1] }}
                     >
-                        <div className={styles.text1}
+                        <motion.div className={styles.text1}
                              initial={text.initial}
                              animate={text.enter}
                              exit={text.exit}
                         >
                             <div className={styles.dot1}></div>
                             <p className={styles.route1}>{routeDetail}</p>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>

@@ -6,6 +6,7 @@ import {AnimatePresence} from "framer-motion";
 import Preloader from "@/components/Preloader";
 import Landing from "@/components/Landing";
 import Description from "@/components/Description"
+import Works from "@/components/Works";
 import styles from './style.module.scss'
 
 
@@ -50,6 +51,7 @@ export default function Home() {
         </AnimatePresence>
         <Landing />
         <Description />
+        <Works />
     </main>
   );
 }
