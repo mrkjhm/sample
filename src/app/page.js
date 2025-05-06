@@ -28,6 +28,15 @@ export default function Home() {
 
     }, []);
 
+    const lenis = new Lenis({
+        gestureDirection: 'none', // block user scroll input
+    });
+
+
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+    }, []);
+
 
     useEffect( () => {
         (
